@@ -1,0 +1,94 @@
+api:
+  replicaCount: 1
+auth:
+  token: 
+    enabled: false
+  openid:
+    enabled: true
+    clientId: 
+    mapping:
+      externalIDKey: email
+buildkit:
+  ingress:
+    enabled: false
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: 3
+      memory: 20Gi
+    requests:
+      cpu: 2
+      memory: 10Gi
+  service:
+    loadBalancerIP: 35.203.138.106
+    type: LoadBalancer
+cloud:
+  provider:
+    gcp:
+      bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
+      enabled: true
+      project: vast-watch-300207
+email: ramiro@okteto.com
+endpoint: 104.199.117.34
+frontend:
+  replicaCount: 1
+gc:
+  deleteNamespacePeriod: 15
+  enabled: true
+  scaleToZeroPeriod: 96
+  slackWebhook: ""
+github:
+  enabled: true
+ingress:
+  forceIngressSubdomain: false
+  tlsSecret: ramiro-okteto-dev-tls-cert 
+ingress-nginx:
+  controller:
+    extraArgs:
+      default-ssl-certificate: $(POD_NAMESPACE)/default-ssl-certificate
+    replicaCount: 1
+    service:
+      loadBalancerIP: 35.197.38.70
+  defaultBackend:
+    replicaCount: 1
+privateRegistry:
+  docker:
+    url: https://index.docker.io/v1/
+publicOverride: ramiro.okteto.dev
+quotas:
+  limitranges:
+    max:
+      cpu: "2"
+      enabled: true
+      memory: 8Gi
+    requests:
+      enabled: true
+      limitRequestRatio: 1000
+  limits:
+    cpu: ""
+    enabled: true
+    memory: ""
+    storage: 80Gi
+registry:
+  replicaCount: 1
+subdomain: ramiro.okteto.dev
+telemetry:
+  enabled: false
+theme:
+  logo: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE3MSIgdmlld0JveD0iMCAwIDE3MSAxNzEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04NS41IDE3MUMxMzIuNzIgMTcxIDE3MSAxMzIuNzIgMTcxIDg1LjVDMTcxIDM4LjI3OTcgMTMyLjcyIDAgODUuNSAwQzM4LjI3OTcgMCAwIDM4LjI3OTcgMCA4NS41QzAgMTMyLjcyIDM4LjI3OTcgMTcxIDg1LjUgMTcxWiIgZmlsbD0iIzAwRDFDQSIvPgo8cGF0aCBkPSJNNTUuNzYwOCA4NS41MDAxQzU1Ljc2MDggNjkuMjE5IDY5LjIxNDIgNTUuNzYxIDg2LjEzMjYgNTUuNzYxQzk1LjgwNDUgNTUuNzYxIDEwNC4zNzkgNjAuMTczMyAxMDkuOTM4IDY3LjAyOTdDMTEzLjI2MiA3MS4xMzA2IDExOS4yODIgNzEuNzYgMTIzLjM4MyA2OC40MzU0QzEyNy40ODQgNjUuMTEwOCAxMjguMTEzIDU5LjA5MTIgMTI0Ljc4OSA1NC45OTAyQzExNS43MTQgNDMuNzk2NyAxMDEuNzQ3IDM2LjY0MjkgODYuMTMyNiAzNi42NDI5QzU4Ljk0NDcgMzYuNjQyOSAzNi42NDI4IDU4LjM3MzcgMzYuNjQyOCA4NS41MDAxQzM2LjY0MjggMTEyLjYyNyA1OC45NDQ3IDEzNC4zNTcgODYuMTMyNiAxMzQuMzU3QzEwMS43NDcgMTM0LjM1NyAxMTUuNzE0IDEyNy4yMDMgMTI0Ljc4OSAxMTYuMDFDMTI4LjExMyAxMTEuOTA5IDEyNy40ODQgMTA1Ljg4OSAxMjMuMzgzIDEwMi41NjVDMTE5LjI4MiA5OS4yNDAyIDExMy4yNjIgOTkuODY5NSAxMDkuOTM4IDEwMy45N0MxMDQuMzc5IDExMC44MjcgOTUuODA0NSAxMTUuMjM5IDg2LjEzMjYgMTE1LjIzOUM2OS4yMTQyIDExNS4yMzkgNTUuNzYwOCAxMDEuNzgxIDU1Ljc2MDggODUuNTAwMVoiIGZpbGw9IiMxQTI2M0UiLz4KPHBhdGggZD0iTTEyNC43OTggOTUuMDU5MUMxMzAuMDc3IDk1LjA1OTEgMTM0LjM1NyA5MC43Nzk0IDEzNC4zNTcgODUuNTAwMUMxMzQuMzU3IDgwLjIyMDggMTMwLjA3NyA3NS45NDExIDEyNC43OTggNzUuOTQxMUMxMTkuNTE5IDc1Ljk0MTEgMTE1LjIzOSA4MC4yMjA4IDExNS4yMzkgODUuNTAwMUMxMTUuMjM5IDkwLjc3OTQgMTE5LjUxOSA5NS4wNTkxIDEyNC43OTggOTUuMDU5MVoiIGZpbGw9IiMxQTI2M0UiLz4KPC9zdmc+Cg==
+  primary: \#EFF3F2
+  secondary: \#000000
+tolerations:
+  buildPool: build
+volumeSnapshots:
+  class: okteto
+  driver: pd.csi.storage.gke.io
+  enabled: true
+  storageClass: csi-okteto
+webhook:
+  replicaCount: 1
+wildcardCertificate:
+  create: false
+  name: default-ssl-certificate
+gitCatalog:
+  enabled: true
