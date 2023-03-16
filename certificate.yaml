@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: default-ssl-certificate
+  namespace: okteto
+spec:
+  dnsNames:
+  - '*.ramiro.okteto.dev'
+  - 'ramiro.okteto.dev'
+  duration: 2160h0m0s
+  issuerRef:
+    kind: Issuer
+    name: ramiro-okteto-enterprise
+  renewBefore: 600h0m0s
+  secretName: default-ssl-certificate

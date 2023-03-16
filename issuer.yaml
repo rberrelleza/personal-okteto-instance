@@ -1,0 +1,30 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  annotations:
+    helm.sh/resource-policy: keep
+    meta.helm.sh/release-name: ramiro
+    meta.helm.sh/release-namespace: okteto
+  creationTimestamp: "2022-02-10T01:15:38Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: okteto
+  name: ramiro-okteto-enterprise
+spec:
+  acme:
+    email: ramiro@okteto.com
+    preferredChain: ""
+    privateKeySecretRef:
+      name: ramiro-okteto-enterprise-letsencrypt
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - http01:
+        ingress:
+          class: okteto-nginx
+          serviceType: ClusterIP
+    - dns01:
+        cloudDNS:
+          project: vast-watch-300207
+          serviceAccountSecretRef:
+            key: key
+            name: okteto-cloud-secret

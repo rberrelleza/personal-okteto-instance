@@ -41,7 +41,6 @@ github:
   enabled: true
 ingress:
   forceIngressSubdomain: false
-  tlsSecret: ramiro-okteto-dev-tls-cert 
 ingress-nginx:
   controller:
     extraArgs:
