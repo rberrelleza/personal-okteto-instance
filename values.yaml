@@ -1,8 +1,6 @@
 api:
   replicaCount: 1
 auth:
-  token: 
-    enabled: false
   openid:
     enabled: true
     clientId: 
@@ -19,15 +17,11 @@ buildkit:
     requests:
       cpu: 2
       memory: 10Gi
+  persistence:
+    enabled: true
   service:
     loadBalancerIP: 35.203.138.106
     type: LoadBalancer
-cloud:
-  provider:
-    gcp:
-      bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
-      enabled: true
-      project: vast-watch-300207
 email: ramiro@okteto.com
 endpoint: 104.199.117.34
 frontend:
@@ -70,6 +64,12 @@ quotas:
     storage: 80Gi
 registry:
   replicaCount: 1
+  storage:
+    provider:
+      gcp:
+        enabled: true
+        bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
+        project: vast-watch-300207
 subdomain: ramiro.okteto.dev
 telemetry:
   enabled: false
@@ -89,5 +89,10 @@ webhook:
 wildcardCertificate:
   create: false
   name: default-ssl-certificate
-gitCatalog:
+
+podSecurityPolicy:
   enabled: true
+
+installer:
+  #image: okteto/installer:1.8.7
+  image: adrianokteto/6123:installer 
