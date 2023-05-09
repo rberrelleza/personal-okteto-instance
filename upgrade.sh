@@ -1,6 +1,8 @@
-source .env
+doppler secrets download --format=env --no-file > okteto.env
+source okteto.env
+
 helm repo update
-helm upgrade ramiro okteto/okteto --version 1.7.0-rc.8 -f values.yaml -n=okteto --devel \
+helm upgrade ramiro okteto/okteto --version 1.8.0-rc.9 -f values.yaml -n=okteto --devel \
     --set auth.openid.clientId=$OPENID_CLIENTID \
     --set auth.openid.endpoints.issuer=$OKTA_ISSUER \
     --set auth.openid.endpoints.authorization=$OKTA_AUTHORIZATION \

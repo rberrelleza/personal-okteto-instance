@@ -2,3 +2,4 @@ node_modules
 github.key
 .env
 service.json
+okteto.env

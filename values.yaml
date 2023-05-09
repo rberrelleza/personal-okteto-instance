@@ -89,6 +89,3 @@ webhook:
 wildcardCertificate:
   create: false
   name: default-ssl-certificate
-
-podSecurityPolicy:
-  enabled: true
