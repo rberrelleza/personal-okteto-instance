@@ -1,0 +1,5 @@
+global:
+  podSecurityPolicy:
+    enabled: true
+
+replicaCount: 1
