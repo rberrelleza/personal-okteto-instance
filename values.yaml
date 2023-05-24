@@ -66,10 +66,27 @@ registry:
   replicaCount: 1
   storage:
     provider:
-      gcp:
+      aws:
         enabled: true
-        bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
-        project: vast-watch-300207
+        bucket: "okteto"
+        region: "us-east-1"
+        iam:
+          enabled: true
+          accessKeyID: "okteto"
+  extraEnv:
+  # minio requires this settings according to https://medium.com/@enne/use-minio-as-docker-registry-storage-driver-c9c72c72cc87
+  - name: REGISTRY_STORAGE_S3_REGIONENDPOINT
+    value: "http://minio:9000"
+  - name: "REGISTRY_STORAGE_S3_ENCRYPT"
+    value: "false"
+  - name: "REGISTRY_STORAGE_S3_SECURE"
+    value: "true"
+  - name: "REGISTRY_STORAGE_S3_V4AUTH"
+    value: "true"
+  - name: "REGISTRY_STORAGE_S3_CHUNKSIZE"
+    value: "5242880"
+  - name: "REGISTRY_STORAGE_S3_ROOTDIRECTORY"
+    value: "/"
 subdomain: ramiro.okteto.dev
 telemetry:
   enabled: false

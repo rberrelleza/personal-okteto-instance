@@ -1,0 +1,18 @@
+defaultBucket:
+  enabled: true
+  name: "okteto"
+
+serviceAccount:
+  create: false
+  name: "ramiro-okteto-registry"
+  
+accessKey: "okteto"
+
+secretKey: "okteto123"
+
+persistence:
+  size: "500Gi" 
+
+resources:
+  requests:
+      memory: "500Mi"

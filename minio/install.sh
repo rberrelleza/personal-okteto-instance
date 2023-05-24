@@ -1,0 +1,1 @@
+helm upgrade --install minio minio/minio --version 8.0.10 --values minio.yaml -n=okteto
