@@ -35,8 +35,13 @@ github:
   enabled: true
 ingress:
   forceIngressSubdomain: false
+okteto-nginx:
+  controller:
+    replicaCount: 1
 ingress-nginx:
   controller:
+    config:
+      use-proxy-protocol: "true"
     extraArgs:
       default-ssl-certificate: $(POD_NAMESPACE)/default-ssl-certificate
     replicaCount: 1
