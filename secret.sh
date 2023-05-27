@@ -11,3 +11,5 @@ kubectl create secret  -n=okteto generic okteto-cloud-secret \
 --from-literal=GITHUB_APP_PRIVATE_KEY="$GITHUB_KEY" \
 -o yaml | \
 kubectl apply -n=okteto -f -
+
+rm okteto.env

@@ -7,3 +7,5 @@ kubectl create secret  -n=okteto generic okteto-registry-secret \
 --from-literal=key="$SERVICE_JSON" \
 -o yaml | \
 kubectl apply -n=okteto -f -
+
+rm okteto.env

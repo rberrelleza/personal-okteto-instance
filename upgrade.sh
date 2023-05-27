@@ -14,3 +14,5 @@ helm upgrade ramiro okteto/okteto --version 1.8.1 -f values.yaml -n=okteto --dev
     --set github.installationUrl=$GITHUB_INSTALLATION_URL \
     --set privateRegistry.docker.password=$DOCKER_PASSWORD \
     --set privateRegistry.docker.user=$DOCKER_USER \
+
+rm okteto.env
