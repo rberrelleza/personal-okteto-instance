@@ -68,11 +68,10 @@ quotas:
 registry:
   replicaCount: 1
   storage:
-    provider:
-      gcp:
+    filesystem:
+      enabled: true
+      persistence:
         enabled: true
-        bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
-        project: vast-watch-300207
 subdomain: ramiro.okteto.dev
 telemetry:
   enabled: false
