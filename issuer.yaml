@@ -10,10 +10,6 @@ spec:
       name: ramiro-okteto-enterprise-letsencrypt
     server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
-    - http01:
-        ingress:
-          class: okteto-nginx
-          serviceType: ClusterIP
     - dns01:
         cloudDNS:
           project: vast-watch-300207

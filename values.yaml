@@ -57,9 +57,6 @@ quotas:
       cpu: "2"
       enabled: true
       memory: 8Gi
-    requests:
-      enabled: true
-      limitRequestRatio: 1000
   limits:
     cpu: ""
     enabled: true
