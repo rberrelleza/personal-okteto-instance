@@ -89,3 +89,12 @@ webhook:
 wildcardCertificate:
   create: false
   name: default-ssl-certificate
+
+backend:
+  image:
+    registry: gcr.io/vast-watch-300207/ramiro-backend
+    tag: "sha256:f2fc2af6a181a51d545c926570cfd76eefdc94fe8218db95c3811c304454c388"
+
+telemetry:
+  replicated:
+    enabled: true

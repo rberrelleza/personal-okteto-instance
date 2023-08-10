@@ -3,8 +3,8 @@ source okteto.env
 
 VERSION="${1:-'1.12.0'}"
 
-helm repo update
-helm upgrade ramiro okteto/okteto --version 1.11.0 -f values.yaml -n=okteto --devel \
+helm registry login registry.replicated.com --username "$REPLICATED_USER_EMAIL" --password "$REPLICATED_LICENSE"
+helm upgrade --install ramiro oci://registry.replicated.com/okteto-teams/trial/okteto -f values.yaml -n=okteto \
     --set auth.openid.clientId=$OPENID_CLIENTID \
     --set auth.openid.endpoints.issuer=$OKTA_ISSUER \
     --set auth.openid.endpoints.authorization=$OKTA_AUTHORIZATION \
