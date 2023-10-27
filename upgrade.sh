@@ -2,7 +2,7 @@ doppler secrets download --format=env --no-file > okteto.env
 source okteto.env
 
 helm repo update
-helm upgrade ramiro okteto/okteto --version "1.13.0" -f values.yaml -n=okteto --devel \
+helm upgrade ramiro okteto/okteto --version "1.14.0" -f values.yaml -n=okteto --devel \
     --set auth.openid.clientId=$OPENID_CLIENTID \
     --set auth.openid.endpoints.issuer=$OKTA_ISSUER \
     --set auth.openid.endpoints.authorization=$OKTA_AUTHORIZATION \
@@ -12,8 +12,8 @@ helm upgrade ramiro okteto/okteto --version "1.13.0" -f values.yaml -n=okteto --
     --set github.clientId=$GITHUB_CLIENTID \
     --set github.clientSecret=$GITHUB_CLIENTSECRET \
     --set github.installationUrl=$GITHUB_INSTALLATION_URL \
-    --set privateRegistry.docker.password=$DOCKER_PASSWORD \
-    --set privateRegistry.docker.user=$DOCKER_USER \
-    --set cluster.endpoint=https://104.199.117.34
+    --set cluster.endpoint=https://104.199.117.34 \
+    --set insights.enabled=true \
+    --set insights.bearerSecret.key=ramiro 
 
 rm okteto.env
