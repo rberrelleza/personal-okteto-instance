@@ -7,8 +7,6 @@ auth:
     mapping:
       externalIDKey: email
 buildkit:
-  ingress:
-    enabled: false
   replicaCount: 1
   resources:
     limits:
@@ -19,9 +17,6 @@ buildkit:
       memory: 10Gi
   persistence:
     enabled: true
-  service:
-    loadBalancerIP: 35.203.138.106
-    type: LoadBalancer
 email: ramiro@okteto.com
 endpoint: 104.199.117.34
 frontend:
