@@ -26,6 +26,7 @@ gc:
   enabled: true
   scaleToZeroPeriod: 96
   slackWebhook: ""
+globalClusterRole: custom-role-with-nodes-access
 github:
   enabled: true
 ingress:
@@ -84,3 +85,4 @@ webhook:
 wildcardCertificate:
   create: false
   name: default-ssl-certificate
+
