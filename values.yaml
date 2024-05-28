@@ -84,3 +84,8 @@ webhook:
 wildcardCertificate:
   create: false
   name: default-ssl-certificate
+
+unsupported:
+  grafana:
+    enabled: true
+    endpoint: https://grafana-okteto-insights.ramiro.okteto.dev/dashboards/f/edn2zm1go3qbkc/
