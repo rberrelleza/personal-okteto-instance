@@ -35,7 +35,6 @@ gc:
   enabled: true
   scaleToZeroPeriod: 96
   slackWebhook: ""
-globalClusterRole: custom-role-with-nodes-access
 github:
   enabled: true
 ingress:
@@ -74,6 +73,8 @@ registry:
         enabled: true
         bucket: ramiro-okteto-545bddee-b754-6c5a-45ed-b3af20f4e755
         project: vast-watch-300207
+serviceAccounts:
+  clusterRoleBinding: custom-role-with-nodes-access
 subdomain: ramiro.okteto.dev
 telemetry:
   enabled: false
