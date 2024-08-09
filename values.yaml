@@ -91,7 +91,7 @@ webhook:
   replicaCount: 1
 wildcardCertificate:
   create: false
-  name: default-ssl-certificate
+  name: ramiro-okteto-dev-certificate
 
 unsupported:
   grafana:
