@@ -6,7 +6,7 @@ export OKTA_ISSUER=https://cognito-idp.us-west-2.amazonaws.com/us-west-2_99NG6XK
 export OPENID_CLIENTID=37pjkh9fefgj17iisbp7p9gqbf
 
 helm repo update
-helm upgrade ramiro okteto/okteto --version "1.23.0" -f values.yaml -n=okteto --devel \
+helm upgrade ramiro okteto/okteto --version "1.23.2" -f values.yaml -n=okteto --devel \
     --set auth.openid.clientId=$OPENID_CLIENTID \
     --set auth.openid.endpoints.issuer=$OKTA_ISSUER \
     --set auth.openid.endpoints.authorization=$OKTA_AUTHORIZATION \
