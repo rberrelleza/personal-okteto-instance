@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: okteto-letsencrypt
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email:  ramiro@okteto.com
+    privateKeySecretRef:
+      name: okteto-letsencrypt-acme
+    solvers:
+    - http01:
+        ingress:
+          serviceType: ClusterIP
+          ingressClassName: okteto-controlplane-nginx
+    - dns01:
+        cloudDNS:
+          project: okteto-demo-sandboxes
+          serviceAccountSecretRef:
+            name: clouddns-dns01-solver-svc-acct
+            key: key.json

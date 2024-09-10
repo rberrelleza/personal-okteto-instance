@@ -1,0 +1,19 @@
+apiVersion: git.okteto.com/v1
+kind: CatalogItem
+metadata:
+  annotations:
+    dev.okteto.com/last-updated: 2024-02-15T18:26:20
+  creationTimestamp: "2024-02-15T18:26:20Z"
+  generation: 1
+  labels:
+    dev.okteto.com: "true"
+  name: bd256f15-103e-417c-b2b2-d8dd358a9a48
+  namespace: okteto
+  resourceVersion: "754377134"
+  uid: b8604e7d-bb19-4720-945c-6b4918c0fbff
+spec:
+  branch: ""
+  manifestPath: ""
+  name: The Oktaco Shop - Dev
+  repositoryUrl: https://github.com/okteto/external-resources-tf-localstack
+  variables: []

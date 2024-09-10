@@ -1,5 +1,4 @@
-global:
-  podSecurityPolicy:
-    enabled: true
-
-replicaCount: 1
+extraArgs: [--issuer-ambient-credentials=true]
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: ramiro-okteto-me@okteto-demo-sandboxes.iam.gserviceaccount.com

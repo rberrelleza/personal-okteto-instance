@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+ name: okteto-letsencrypt
+spec:
+ secretName: okteto-letsencrypt
+ duration: 8760h0m0s
+ renewBefore: 600h0m0s # 25d
+ issuerRef:
+   name: okteto-letsencrypt
+   kind: ClusterIssuer
+ dnsNames:
+   - "*.ramiro.okteto.me"
+   - "ramiro.okteto.me"

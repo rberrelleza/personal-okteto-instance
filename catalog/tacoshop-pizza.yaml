@@ -1,0 +1,18 @@
+apiVersion: git.okteto.com/v1
+kind: CatalogItem
+metadata:
+  annotations:
+    dev.okteto.com/last-updated: 2023-06-02T17:45:08
+  creationTimestamp: "2023-05-20T01:45:38Z"
+  generation: 4
+  labels:
+    dev.okteto.com: "true"
+  name: 0c268095-fcff-4515-afad-f26c5a3d54e1
+  namespace: okteto
+  resourceVersion: "383066327"
+  uid: 476e57ea-2115-416a-af8f-c9aa834b0c63
+spec:
+  branch: "OKTACO-2-Add-an-option-to-pizzafy-the-store"
+  manifestPath: ""
+  name: 'The Oktaco Shop - Pizza'
+  repositoryUrl: https://github.com/okteto/external-resources-tf-aws
