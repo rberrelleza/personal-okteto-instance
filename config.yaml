@@ -9,6 +9,10 @@ buildkit:
   persistence:
     enabled: true
 
+gc:
+  scaleToZeroPeriod: 1
+  deleteNamespacePeriod: 3
+
 frontend:
   replicaCount: 1
 
@@ -26,6 +30,11 @@ ingress-nginx:
     replicaCount: 1
 
 publicOverride: ramiro.okteto.me
+
+quotas:
+  limitranges:
+    limits:
+      enabled: false
 
 registry:
   replicaCount: 1
@@ -49,6 +58,12 @@ theme:
   primary: \#EFF3F2
   secondary: \#000000
 
+volumeSnapshots:
+  enabled: true
+  driver: pd.csi.storage.gke.io
+  class:  okteto-snapshot-class
+  storageClass: okteto-snapshot-sc
+
 webhook:
   replicaCount: 1
 
@@ -56,7 +71,7 @@ wildcardCertificate:
   create: false
   name: okteto-letsencrypt
 
-quotas:
-  limitranges:
-    limits:
-      enabled: false
+unsupported:
+  grafana:
+    enabled: true
+    endpoint: https://grafana-okteto-insights.ramiro.okteto.me/dashboards/f/edn2zm1go3qbkc/

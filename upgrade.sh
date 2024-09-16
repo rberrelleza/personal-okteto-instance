@@ -2,5 +2,5 @@
 #source okteto.env
 
 helm repo update
-helm upgrade okteto okteto/okteto --version "1.24.1" -f config.yaml -n=okteto --devel
+helm upgrade okteto okteto/okteto --version "1.24.2" -f config.yaml -n=okteto --devel
 #rm okteto.env
