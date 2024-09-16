@@ -55,3 +55,8 @@ webhook:
 wildcardCertificate:
   create: false
   name: okteto-letsencrypt
+
+quotas:
+  limitranges:
+    limits:
+      enabled: false
