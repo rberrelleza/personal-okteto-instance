@@ -1,0 +1,19 @@
+apiVersion: git.okteto.com/v1
+kind: CatalogItem
+metadata:
+  annotations:
+    dev.okteto.com/last-updated: 2023-09-07T11:19:17
+  creationTimestamp: "2022-11-08T20:43:13Z"
+  generation: 6
+  labels:
+    dev.okteto.com: "true"
+  name: 519bbf35-ee7f-4453-8fa5-586fc19aa0f5
+  namespace: okteto
+  resourceVersion: "475918823"
+  uid: 914d7f63-1567-4438-af87-120a3427144b
+spec:
+  branch: ""
+  manifestPath: ""
+  name: Movies
+  repositoryUrl: https://github.com/okteto/movies
+  variables: []

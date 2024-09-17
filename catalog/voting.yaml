@@ -1,0 +1,19 @@
+apiVersion: git.okteto.com/v1
+kind: CatalogItem
+metadata:
+  annotations:
+    dev.okteto.com/last-updated: 2023-02-07T17:02:58
+  creationTimestamp: "2023-02-07T17:02:59Z"
+  generation: 1
+  labels:
+    dev.okteto.com: "true"
+  name: f1fd5f39-e06e-4499-9db3-5516fb1cd250
+  namespace: okteto
+  resourceVersion: "286399620"
+  uid: 937e8e71-04f3-4c9a-b3e8-d12311ae9df6
+spec:
+  branch: ""
+  manifestPath: ""
+  name: Voting App
+  repositoryUrl: https://github.com/okteto/microservices-demo
+  variables: []
